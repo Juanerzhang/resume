@@ -1,0 +1,28 @@
+
+
+/* 通用属性 begin*/
+
+* { margin: 0; padding: 0; list-style: none; }
+body { font-family: "微软雅黑", Arial, Helvetica, sans-serif; color: #2c2c2c; font-size: 14px; }
+.float_clear { clear: both; }
+img { border: 0; vertical-align: top; }
+
+/* a */
+a { color: #2c2c2c; text-decoration: none; text-decoration: none; -moz-transition: all .3s; -webkit-transition: all .3s; transition: all .3s; }
+a:visited { }
+a:hover { text-decoration: none; color: #0075e9; }
+a:focus { outline: none; }
+p { line-height: 22px; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+:focus { outline: 0; text-decoration: none; }
+a:focus { outline: 0; text-decoration: none; color: #0075e9; }
+div, ul, li, dl, dt, dd { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size: 0; }
+.clearfix { *zoom: 1; }
+/* 通用属性 end*/
+
+#menu {position: fixed; width: 100%;left:0; top:10px; list-style-type: none; z-index: 70;text-align: center;}
+#menu li {  margin:  0 10px 0 0; font-size: 14px;display: inline-block;}
+#menu a { padding: 10px 20px; background-color: #d86cf3; color: #fff; text-decoration: none;display: block;-webkit-border-radius: 10px;border-radius: 10px;border:none;}
+#menu .active a { background-color: #8C1DEE;}
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
