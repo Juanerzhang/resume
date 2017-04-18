@@ -109,46 +109,53 @@ $(function(){
     	disX=0,
     	listL=0,
     	w=exp_list.clientWidth,
-    	n=0;
+    	n=0,
+    	bW=document.documentElement.clientWidth;
 
-    	exp_list.innerHTML+=exp_list.innerHTML;
-    	len=exp_list.children.length;
-    	exp_list.style.width=w*len+'px';
+    	
+    	if(bW<640){
+    		exp_list.style.width=w*len+'px';
+    		exp_list.innerHTML+=exp_list.innerHTML;
+    		len=exp_list.children.length;
 
-    exp_list.addEventListener('touchstart',start);
-    exp_list.addEventListener('touchmove',move);
-	exp_list.addEventListener('touchend',end);
+    		exp_list.addEventListener('touchstart',start);
+		    exp_list.addEventListener('touchmove',move);
+			exp_list.addEventListener('touchend',end);
 
-	function start(ev){
-		var e=ev.changedTouches[0];
-		disX=e.pageX;
-		exp_list.style.transition='none';
+			function start(ev){
+				var e=ev.changedTouches[0];
+				disX=e.pageX;
+				exp_list.style.transition='none';
 
-		var mun=Math.random(exp_list.offsetLeft/w);
-		if(mun==0){
-			mun=page_li.length;
-			exp_list.style.left=-w*mun+'px';
-		}
-		if(-mun==len-1){
-			mun=len-1;
-			exp_list.style.left=-w*mun+'px';
-		}
-		exp_listL = this.offsetLeft;
-	}
-	function move(ev){
-		var e = ev.changedTouches[0];
-		exp_list.style.left = (e.pageX - disX) + listL + 'px';
-	}
-	function end(){
-		var num = Math.round(exp_list.offsetLeft / w);
-		exp_list.style.transition = '.5s';
-		exp_list.style.left = num * w + 'px';
-		
-		//console.log(-num)
-		page_li[n].className = '';
-		page_li[-num%page_li.length].className = 'active';
-		n = -num%page_li.length;
-	}
+				var mun=Math.random(exp_list.offsetLeft/w);
+				if(mun==0){
+					mun=page_li.length;
+					exp_list.style.left=-w*mun+'px';
+				}
+				if(-mun==len-1){
+					mun=len-1;
+					exp_list.style.left=-w*mun+'px';
+				}
+				exp_listL = this.offsetLeft;
+			}
+			function move(ev){
+				var e = ev.changedTouches[0];
+				exp_list.style.left = (e.pageX - disX) + listL + 'px';
+			}
+			function end(){
+				var num = Math.round(exp_list.offsetLeft / w);
+				exp_list.style.transition = '.5s';
+				exp_list.style.left = num * w + 'px';
+				
+				//console.log(-num)
+				page_li[n].className = '';
+				page_li[-num%page_li.length].className = 'active';
+				n = -num%page_li.length;
+			}
+    	}
+    	
+
+    
 });
 </script>
 </html>
