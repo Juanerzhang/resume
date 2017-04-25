@@ -109,7 +109,7 @@ div, ul, li, dl, dt, dd { box-sizing: border-box; }
 .page{visibility: hidden;}
 
 /*--技能--*/
-.skills .content{overflow: hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width: 800px;}
+.skills .container{overflow: hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width: 800px;margin:0 auto;}
 .skills_info{float:left;width:50%;}
 .skills_list{position: relative;width:300px;margin:28px auto;}
 .skills_list ul{border-radius: 50%;border:4px dashed #ccc;}
@@ -242,6 +242,10 @@ div, ul, li, dl, dt, dd { box-sizing: border-box; }
 		top:-20px;
 	}
 }
+/*--联系我--*/
+.contact_list{}
+.contact ol{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+.contact ol .iconfont{font-size: 20px;}
 
 @media screen and (max-width: 1200px){
 	.content{width:100%;overflow: hidden;position: relative;}
