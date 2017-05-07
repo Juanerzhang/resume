@@ -2,7 +2,7 @@
 * @Author: Juanerzhang
 * @Date:   2017-04-17 20:19:18
 * @Last Modified by:   Juanerzhang
-* @Last Modified time: 2017-04-23 15:06:56
+* @Last Modified time: 2017-05-07 22:18:25
 */
 
 
@@ -27,26 +27,31 @@ $(function(){
     	$("#oCss").html(addCss);
 
     //项目经验滚动
+    rotateFn()
+    $(window).on("resize",function(){
+        rotateFn()
+     })  
+});
+function rotateFn(){
     var bW=document.documentElement.clientWidth,
         experience_list=document.getElementById("experience_list"),
-		exp_li=experience_list.getElementsByTagName("li"),
-		exp_a=experience_list.getElementsByTagName("a"),
-		page=document.getElementById("page"),
-		pageli=page.getElementsByTagName("li"),
-		len=exp_li.length;
-    	if(bW<420){
-    		//导航隐藏
-    		$("#menu").hide();
-    		//点击点点，旋转轮播
-    		for(var i=0;i<len;i++){
-    			pageli[i].index=i;
-    			pageli[i].onclick=function(){
-    				for(var j=0;j<len;j++){
-    					pageli[j].className='';
-    				}
-    				experience_list.style.transform='rotateY('+this.index*-90+'deg)';
-    				this.className="active";
-    			}
-    		}
-    	}  
-});
+        exp_li=experience_list.getElementsByTagName("li"),
+        exp_a=experience_list.getElementsByTagName("a"),
+        page=document.getElementById("page"),
+        pageli=page.getElementsByTagName("li"),
+        len=exp_li.length;
+    if(bW<420){
+        
+        //点击点点，旋转轮播
+        for(var i=0;i<len;i++){
+            pageli[i].index=i;
+            pageli[i].onclick=function(){
+                for(var j=0;j<len;j++){
+                    pageli[j].className='';
+                }
+                experience_list.style.transform='rotateY('+this.index*-90+'deg)';
+                this.className="active";
+            }
+        }
+    }
+}
