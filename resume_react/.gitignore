@@ -1,0 +1,13 @@
+node_modules
+coverage
+.DS_Store
+.*.swp
+.*.swo
+output
+dist
+iconfont.js
+inconfont.css
+.idea
+.vsCode
+*.sublime-propject
+*.sublime-workspace
